@@ -6,17 +6,6 @@ import './Formulario.css';
 
 const Formulario = (props) => {
 
-  const times = [
-    '',
-    'Programação',
-    'Front-end',
-    'Data Science',
-    'Devops',
-    'UX e Design',
-    'Mobile',
-    'Inovação e Gestão'
-  ]
-
   const [nome, setNome] = useState('')
   const [cargo, setCargo] = useState('')
   const [imagem, setImagem] = useState('')
@@ -36,7 +25,7 @@ const Formulario = (props) => {
         <CampoTexto obrigatorio={true} label="Nome" placeholder="Digite o seu nome" valor={nome} aoAlterado={nome => setNome(nome)}/>
         <CampoTexto obrigatorio={true} label="Cargo" placeholder="Digite seu cargo" valor={cargo} aoAlterado={cargo => setCargo(cargo)}/>
         <CampoTexto label="Imagem" placeholder="Informe o endereço da imagem" valor={imagem} aoAlterado={imagem => setImagem(imagem)}/>
-        <ListaSuspensa obrigatorio={true} label="Time" itens={times} valor={time} aoAlterado={time => setTime(time)}/>
+        <ListaSuspensa obrigatorio={true} label="Time" itens={props.times} valor={time} aoAlterado={time => setTime(time)}/>
         <Botao>
           Criar Card
         </Botao>
